@@ -21,4 +21,19 @@ class Smoothie {
             default: return 0;
         }
     }
+        // Calculate total cost including fruits and extras
+    calculatePrice() {
+        const fruitCost = this.fruits.length * 1;       // $1 per fruit
+        const extrasCost = this.extras.length * 0.5;    // $0.5 per extra
+        return this.sizePrice() + fruitCost + extrasCost;
+    }
+
+    // Describe method returns a string
+    describe() {
+        const fruitList = this.fruits.length > 0 ? this.fruits.join(", ") : "no fruits";
+        const extraList = this.extras.length > 0 ? this.extras.join(", ") : "no extras";
+        const totalPrice = this.calculatePrice().toFixed(2);
+
+        return `You ordered a ${this.size} smoothie with ${fruitList}, using ${this.liquid}, and extras: ${extraList}. Total cost: $${totalPrice}.`;
+    }
 }
