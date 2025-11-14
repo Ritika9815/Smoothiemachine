@@ -12,7 +12,7 @@ class Smoothie {
         this.liquid = liquid;
         this.extras = extras;
     }
-     // Calculate base price for size
+
     sizePrice() {
         switch(this.size) {
             case 'Small': return 3;
@@ -21,72 +21,61 @@ class Smoothie {
             default: return 0;
         }
     }
-        // Calculate total cost including fruits and extras
+
     calculatePrice() {
-        const fruitCost = this.fruits.length * 1;       // $1 per fruit
-        const extrasCost = this.extras.length * 0.5;    // $0.5 per extra
+        const fruitCost = this.fruits.length * 1;
+        const extrasCost = this.extras.length * 0.5;
         return this.sizePrice() + fruitCost + extrasCost;
     }
 
-    // Describe method returns a string
     describe() {
         const fruitList = this.fruits.length > 0 ? this.fruits.join(", ") : "no fruits";
         const extraList = this.extras.length > 0 ? this.extras.join(", ") : "no extras";
         const totalPrice = this.calculatePrice().toFixed(2);
-
-       return `You ordered a ${this.size} smoothie with ${fruitList}, using ${this.liquid}, and extras: ${extraList}. Total cost: $${totalPrice}.`;
-
+        return `You ordered a ${this.size} smoothie with ${fruitList}, using ${this.liquid}, and extras: ${extraList}. Total cost: $${totalPrice}.`;
     }
 }
-    /* STEP 2: DeluxeSmoothie subclass adds bonus message */
+
+/* DeluxeSmoothie subclass */
 class DeluxeSmoothie extends Smoothie {
     describe() {
-        return super.describe() + " Enjoy your deluxe smoothie with a smile.";
+        return super.describe() + " Enjoy your deluxe smoothie with a smile!";
     }
 }
-/* STEP 3: Handle order button click */
+
+/* ORDER BUTTON */
 document.getElementById('orderBtn').addEventListener('click', () => {
-    // Get size
     const size = document.getElementById('size').value;
-
-    // Get selected fruits
-    const fruits = Array.from(document.querySelectorAll('input[name="fruits"]:checked'))
-                        .map(fruit => fruit.value);
-
-    // Get selected extras
-    const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked'))
-                        .map(extra => extra.value);
-
-    // Get liquid
+    const fruits = Array.from(document.querySelectorAll('input[name="fruits"]:checked')).map(f => f.value);
+    const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(e => e.value);
     const liquid = document.getElementById('liquid').value;
 
-    // Create a new DeluxeSmoothie object
     const mySmoothie = new DeluxeSmoothie(size, fruits, liquid, extras);
 
-    // Display description on the page
     output.textContent = mySmoothie.describe();
 
-    // Display appropriate image based on size
+    // Display image (jpg files)
     switch(size) {
-        case 'Small':
-            SmoothieImage.src = 'image/small.jpg';
-            break;
-        case 'Medium':
-           smoothieImage.src = 'image/Medium.jpg';
-            break;
-        case 'Large':
-            SmoothieImage.src = 'image/large.jpg';
-            break;
+        case 'Small': smoothieImage.src = 'image/small.jpg'; break;
+        case 'Medium': smoothieImage.src = 'image/Medium.jpg'; break;
+        case 'Large': smoothieImage.src = 'image/large.jpg'; break;
     }
-     smoothieImage.style.display = 'block';
-
-
-    // Log object to console for debugging
+    smoothieImage.style.display = 'block';
     console.log(mySmoothie);
 });
-/*Attribution:
+
+/* RESET BUTTON */
+document.getElementById('resetBtn').addEventListener('click', () => {
+    document.getElementById('smoothieForm').reset();
+    output.textContent = '';
+    smoothieImage.style.display = 'none';
+});
+
+/* Attribution:
 // Smoothie Machine code inspired by COMP1073 class examples
 // Reference for Array.from(): MDN Web Docs
 */
+
+
 
 
