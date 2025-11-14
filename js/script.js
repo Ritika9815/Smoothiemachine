@@ -68,16 +68,16 @@ document.getElementById('orderBtn').addEventListener('click', () => {
     // Display appropriate image based on size
     switch(size) {
         case 'Small':
-            smoothieImage.src = 'images/small.png';
+            SmoothieImage.src = 'image/small.jpg';
             break;
         case 'Medium':
-            smoothieImage.src = 'images/medium.png';
+           smoothieImage.src = 'image/Medium.jpg';
             break;
         case 'Large':
-            smoothieImage.src = 'images/large.png';
+            SmoothieImage.src = 'image/large.jpg';
             break;
     }
-    smoothieImage.style.display = 'block';
+     image.style.display = 'block';
 
     // Log object to console for debugging
     console.log(mySmoothie);
