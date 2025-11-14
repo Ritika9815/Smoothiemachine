@@ -50,6 +50,16 @@ button {
 button:hover {
     background-color: #4cae4c;
 }
+/* OUTPUT STYLING */
+
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    background: #eef8ee;
+    border-left: 5px solid #5cb85c;
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
 
 
 
