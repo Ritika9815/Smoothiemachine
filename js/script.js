@@ -37,3 +37,12 @@ class Smoothie {
         return `You ordered a ${this.size} smoothie with ${fruitList}, using ${this.liquid}, and extras: ${extraList}. Total cost: $${totalPrice}.`;
     }
 }
+    /* STEP 2: DeluxeSmoothie subclass adds bonus message */
+class DeluxeSmoothie extends Smoothie {
+    describe() {
+        return super.describe() + " Enjoy your deluxe smoothie with a smile.";
+    }
+}
+
+
+
