@@ -34,7 +34,8 @@ class Smoothie {
         const extraList = this.extras.length > 0 ? this.extras.join(", ") : "no extras";
         const totalPrice = this.calculatePrice().toFixed(2);
 
-        return `You ordered a ${this.size} smoothie with ${fruitList}, using ${this.liquid}, and extras: ${extraList}. Total cost: $${totalPrice}.`;
+       return `You ordered a ${this.size} smoothie with ${fruitList}, using ${this.liquid}, and extras: ${extraList}. Total cost: $${totalPrice}.`;
+
     }
 }
     /* STEP 2: DeluxeSmoothie subclass adds bonus message */
@@ -77,7 +78,8 @@ document.getElementById('orderBtn').addEventListener('click', () => {
             SmoothieImage.src = 'image/large.jpg';
             break;
     }
-     image.style.display = 'block';
+     smoothieImage.style.display = 'block';
+
 
     // Log object to console for debugging
     console.log(mySmoothie);
