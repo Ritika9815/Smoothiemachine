@@ -71,10 +71,12 @@ document.getElementById('resetBtn').addEventListener('click', () => {
     smoothieImage.style.display = 'none';
 });
 
-/* Attribution:
-// Smoothie Machine code inspired by COMP1073 class examples
-// Reference for Array.from(): MDN Web Docs
+/* 
+Attribution:
+- Smoothie class structure and event handling inspired by client side javascript class examples
+- Array.from() method reference: MDN Web Docs (https://developer.mozilla.org/)
 */
+
 
 
 
