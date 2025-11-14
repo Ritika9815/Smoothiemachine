@@ -82,5 +82,9 @@ document.getElementById('orderBtn').addEventListener('click', () => {
     // Log object to console for debugging
     console.log(mySmoothie);
 });
+/*Attribution:
+// Smoothie Machine code inspired by COMP1073 class examples
+// Reference for Array.from(): MDN Web Docs
+*/
 
 
