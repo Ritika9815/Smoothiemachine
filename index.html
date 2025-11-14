@@ -19,69 +19,74 @@
     <h1>The Smoothie Machine</h1>
     <p>Create your own custom smoothie and see your total cost!</p>
 
-    <!-- Smoothie Form -->
-    <form id="smoothieForm">
-        <!-- Smoothie Size -->
-         <div class="form-group">
-        <label for="size">Select Size:</label>
-        <select id="size" name="size" required>
-            <option value="Small">Small ($3)</option>
-            <option value="Medium">Medium ($4)</option>
-            <option value="Large">Large ($5)</option>
-        </select>
+    <!-- Container for form and image -->
+    <div class="smoothie-container">
+        <!-- Smoothie Form -->
+        <form id="smoothieForm">
+            <!-- Smoothie Size -->
+            <div class="form-group">
+                <label for="size">Select Size:</label>
+                <select id="size" name="size" required>
+                    <option value="Small">Small ($3)</option>
+                    <option value="Medium">Medium ($4)</option>
+                    <option value="Large">Large ($5)</option>
+                </select>
+            </div>
+
+            <!-- Fruits Selection -->
+            <fieldset>
+                <legend>Choose Fruits (each $1):</legend>
+                <div class="form-group">
+                    <input type="checkbox" id="banana" name="fruits" value="Banana">
+                    <label for="banana">Banana</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="strawberry" name="fruits" value="Strawberry">
+                    <label for="strawberry">Strawberry</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="mango" name="fruits" value="Mango">
+                    <label for="mango">Mango</label>
+                </div>
+            </fieldset>
+
+            <!-- Extras Selection -->
+            <fieldset>
+                <legend>Choose Extras (each $0.5):</legend>
+                <div class="form-group">
+                    <input type="checkbox" id="honey" name="extras" value="Honey">
+                    <label for="honey">Honey</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="nuts" name="extras" value="Nuts">
+                    <label for="nuts">Nuts</label>
+                </div>
+            </fieldset>
+
+            <!-- Liquid Selection -->
+            <div class="form-group">
+                <label for="liquid">Select Liquid:</label>
+                <select id="liquid" name="liquid">
+                    <option value="Milk">Milk</option>
+                    <option value="Juice">Juice</option>
+                    <option value="Water">Water</option>
+                </select>
+            </div>
+
+            <!-- Order Buttons -->
+            <button type="button" id="orderBtn">Place Order</button>
+            <button type="button" id="resetBtn">Reset Order</button>
+        </form>
+
+        <!-- Smoothie Image -->
+        <div class="smoothie-image-container">
+            <img id="smoothieImage" src="" alt="Your Smoothie" style="display:none;">
         </div>
-
-        <!-- Fruits Selection -->
-        <fieldset>
-            <legend>Choose Fruits (each $1):</legend>
-            <div class="form-group">
-            <input type="checkbox" id="banana" name="fruits" value="Banana">
-            <label for="banana">Banana</label>
-            </div>
-            <div class="form-group">
-            <input type="checkbox" id="strawberry" name="fruits" value="Strawberry">
-            <label for="strawberry">Strawberry</label>
-            </div>
-            <div class="form-group">
-            <input type="checkbox" id="mango" name="fruits" value="Mango">
-            <label for="mango">Mango</label>
-            </div>
-        </fieldset>
-
-        <!-- Extras Selection -->
-        <fieldset>
-    <legend>Choose Extras (each $0.5):</legend>
-    <div class="form-group">
-        <input type="checkbox" id="honey" name="extras" value="Honey">
-        <label for="honey">Honey</label>
     </div>
-    <div class="form-group">
-        <input type="checkbox" id="nuts" name="extras" value="Nuts">
-        <label for="nuts">Nuts</label>
-    </div>
-</fieldset>
-
-
-        <!-- Liquid Selection -->
-        <div class="form-group">
-    <label for="liquid">Select Liquid:</label>
-    <select id="liquid" name="liquid">
-        <option value="Milk">Milk</option>
-        <option value="Juice">Juice</option>
-        <option value="Water">Water</option>
-    </select>
-</div>
-
-
-        <!-- Order Button -->
-        <button type="button" id="orderBtn">Place Order</button>
-        <button type="button" id="resetBtn">Reset Order</button>
-    </form>
 
     <!-- Output -->
     <div id="output"></div>
-
-    <!-- Smoothie Image -->
-   <img id="smoothieImage" src="" alt="Your Smoothie" style="display:none; width:200px; margin-top:10px;">
-   </body>
+</body>
 </html>
+
+
