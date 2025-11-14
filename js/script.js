@@ -43,6 +43,44 @@ class DeluxeSmoothie extends Smoothie {
         return super.describe() + " Enjoy your deluxe smoothie with a smile.";
     }
 }
+/* STEP 3: Handle order button click */
+document.getElementById('orderBtn').addEventListener('click', () => {
+    // Get size
+    const size = document.getElementById('size').value;
 
+    // Get selected fruits
+    const fruits = Array.from(document.querySelectorAll('input[name="fruits"]:checked'))
+                        .map(fruit => fruit.value);
+
+    // Get selected extras
+    const extras = Array.from(document.querySelectorAll('input[name="extras"]:checked'))
+                        .map(extra => extra.value);
+
+    // Get liquid
+    const liquid = document.getElementById('liquid').value;
+
+    // Create a new DeluxeSmoothie object
+    const mySmoothie = new DeluxeSmoothie(size, fruits, liquid, extras);
+
+    // Display description on the page
+    output.textContent = mySmoothie.describe();
+
+    // Display appropriate image based on size
+    switch(size) {
+        case 'Small':
+            smoothieImage.src = 'images/small.png';
+            break;
+        case 'Medium':
+            smoothieImage.src = 'images/medium.png';
+            break;
+        case 'Large':
+            smoothieImage.src = 'images/large.png';
+            break;
+    }
+    smoothieImage.style.display = 'block';
+
+    // Log object to console for debugging
+    console.log(mySmoothie);
+});
 
 
