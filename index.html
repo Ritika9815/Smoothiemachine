@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Smoothie Machine | Client-Side JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Normalize CSS -->
+    <link href="css/normalize.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <h1>The Smoothie Machine</h1>
+    <p>Create your own custom smoothie and see your total cost!</p>
+
+    <!-- Smoothie Form -->
+    <form id="smoothieForm">
+        <!-- Smoothie Size -->
+        <label for="size">Select Size:</label>
+        <select id="size" name="size">
+            <option value="Small">Small ($3)</option>
+            <option value="Medium">Medium ($4)</option>
+            <option value="Large">Large ($5)</option>
+        </select>
+
+        <!-- Fruits Selection -->
+        <fieldset>
+            <legend>Choose Fruits (each $1):</legend>
+            <input type="checkbox" id="banana" name="fruits" value="Banana">
+            <label for="banana">Banana</label>
+
+            <input type="checkbox" id="strawberry" name="fruits" value="Strawberry">
+            <label for="strawberry">Strawberry</label>
+
+            <input type="checkbox" id="mango" name="fruits" value="Mango">
+            <label for="mango">Mango</label>
+        </fieldset>
+
+        <!-- Extras Selection -->
+        <fieldset>
+            <legend>Choose Extras (each $0.5):</legend>
+            <input type="checkbox" id="honey" name="extras" value="Honey">
+            <label for="honey">Honey</label>
+
+            <input type="checkbox" id="nuts" name="extras" value="Nuts">
+            <label for="nuts">Nuts</label>
+        </fieldset>
+
+        <!-- Liquid Selection -->
+        <label for="liquid">Select Liquid:</label>
+        <select id="liquid" name="liquid">
+            <option value="Milk">Milk</option>
+            <option value="Juice">Juice</option>
+            <option value="Water">Water</option>
+        </select>
+
+        <!-- Order Button -->
+        <button type="button" id="orderBtn">Place Order</button>
+    </form>
+
+    <!-- Output -->
+    <p id="output"></p>
+    <!-- Smoothie Image -->
+    <img id="smoothieImage" src="" alt="Your Smoothie" style="display:none; width:200px; margin-top:10px;">
+</body>
+</html>
